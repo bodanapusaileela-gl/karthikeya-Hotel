@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikeya Tiffins</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header img {
+            width: 100px;
+            height: auto;
+            margin: 10px 0;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .menu-item {
+            background-color: white;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .menu-item h3 {
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+        .menu-item p {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .menu-item .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .menu-list {
+            display: none;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .menu-list h2 {
+            color: #d32f2f;
+        }
+        .menu-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .menu-list li {
+            padding: 6px;
+            font-size: 16px;
+        }
+        .location {
+            text-align: center;
+            margin: 20px;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        @media (max-width: 768px) {
+            .menu-item {
+                width: 180px;
+            }
+        }
+        @media (max-width: 480px) {
+            .menu-item {
+                width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Karthikeya Tiffins</h1>
+    <p>Unlimited Tiffins for Students - Just ₹49!</p>
+    <p>Starting from 11-10-25</p>
+</header>
+
+<div class="menu">
+    <!-- Idly -->
+    <div class="menu-item" onclick="toggleMenu('idly')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Idli_Sambar_Chutney.jpg/800px-Idli_Sambar_Chutney.jpg" alt="Idly">
+        <h3>Idly</h3>
+        <p>Click to view Idly options</p>
+    </div>
+
+    <!-- Dosa -->
+    <div class="menu-item" onclick="toggleMenu('dosa')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Masala_Dosa_with_chutney_and_sambar.jpg" alt="Dosa">
+        <h3>Dosa</h3>
+        <p>Click to view Dosa options</p>
+    </div>
+
+    <!-- Punugulu -->
+    <div class="menu-item" onclick="toggleMenu('punugulu')">
+        <img src="https://www.cookingcarnival.com/wp-content/uploads/2021/05/Punugulu-4.jpg" alt="Punugulu">
+        <h3>Punugulu</h3>
+        <p>Click to view Punugulu options</p>
+    </div>
+
+    <!-- Puri -->
+    <div class="menu-item" onclick="toggleMenu('puri')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Poori_Bhaji.jpg/800px-Poori_Bhaji.jpg" alt="Puri">
+        <h3>Puri</h3>
+        <p>Click to view Puri options</p>
+    </div>
+</div>
+
+<!-- Menu Lists -->
+<div id="idly" class="menu-list">
+    <h2>Idly Menu</h2>
+    <ul>
+        <li>2 Idly with Sambar & Chutney - ₹15</li>
+        <li>4 Idly Combo - ₹25</li>
+        <li>Mini Idly Sambar - ₹30</li>
+    </ul>
+</div>
+
+<div id="dosa" class="menu-list">
+    <h2>Dosa Menu</h2>
+    <ul>
+        <li>Plain Dosa - ₹25</li>
+        <li>Masala Dosa - ₹30</li>
+        <li>Onion Dosa - ₹35</li>
+    </ul>
+</div>
+
+<div id="punugulu" class="menu-list">
+    <h2>Punugulu Menu</h2>
+    <ul>
+        <li>Small Plate (6 pcs) - ₹10</li>
+        <li>Large Plate (12 pcs) - ₹20</li>
+    </ul>
+</div>
+
+<div id="puri" class="menu-list">
+    <h2>Puri Menu</h2>
+    <ul>
+        <li>2 Puris with Curry - ₹25</li>
+        <li>4 Puris Combo - ₹35</li>
+    </ul>
+</div>
+
+<!-- Location Section -->
+<div class="location">
+    <p><strong>Location:</strong> Etukuru Road, Opposite D.S. Nagar, Brindavan Apartments, Guntur</p>
+</div>
+
+<script>
+    // Toggle visibility of menu items
+    function toggleMenu(category) {
+        const menuLists = document.querySelectorAll('.menu-list');
+        menuLists.forEach(list => list.style.display = 'none');
+
+        const selectedMenu = document.getElementById(category);
+        if (selectedMenu) {
+            selectedMenu.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
