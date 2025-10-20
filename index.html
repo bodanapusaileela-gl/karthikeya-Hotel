@@ -1,190 +1,331 @@
-<!DOCTYPE html>
+<!-- Save as index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karthikeya Tiffins</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #d32f2f;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        header img {
-            width: 100px;
-            height: auto;
-            margin: 10px 0;
-        }
-        .menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px;
-        }
-        .menu-item {
-            background-color: white;
-            border: 1px solid #ccc;
-            margin: 10px;
-            padding: 20px;
-            width: 200px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-        .menu-item:hover {
-            transform: scale(1.05);
-        }
-        .menu-item img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .menu-item h3 {
-            margin: 10px 0;
-            color: #2c3e50;
-        }
-        .menu-item p {
-            font-size: 14px;
-            color: #7f8c8d;
-        }
-        .menu-item .price {
-            font-size: 16px;
-            font-weight: bold;
-            color: #e74c3c;
-        }
-        .menu-list {
-            display: none;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .menu-list h2 {
-            color: #d32f2f;
-        }
-        .menu-list ul {
-            list-style: none;
-            padding: 0;
-        }
-        .menu-list li {
-            padding: 6px;
-            font-size: 16px;
-        }
-        .location {
-            text-align: center;
-            margin: 20px;
-            font-size: 18px;
-            color: #2c3e50;
-        }
-        @media (max-width: 768px) {
-            .menu-item {
-                width: 180px;
-            }
-        }
-        @media (max-width: 480px) {
-            .menu-item {
-                width: 160px;
-            }
-        }
-    </style>
-</head>
-<body>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Karthikeya Tiffins — Unlimited ₹49</title>
 
-<header>
-    <h1>Welcome to Karthikeya Tiffins</h1>
-    <p>Unlimited Tiffins for Students - Just ₹49!</p>
-    <p>Starting from 11-10-25</p>
-</header>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<div class="menu">
-    <!-- Idly -->
-    <div class="menu-item" onclick="toggleMenu('idly')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Idli_Sambar_Chutney.jpg/800px-Idli_Sambar_Chutney.jpg" alt="Idly">
-        <h3>Idly</h3>
-        <p>Click to view Idly options</p>
-    </div>
-
-    <!-- Dosa -->
-    <div class="menu-item" onclick="toggleMenu('dosa')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Masala_Dosa_with_chutney_and_sambar.jpg" alt="Dosa">
-        <h3>Dosa</h3>
-        <p>Click to view Dosa options</p>
-    </div>
-
-    <!-- Punugulu -->
-    <div class="menu-item" onclick="toggleMenu('punugulu')">
-        <img src="https://www.cookingcarnival.com/wp-content/uploads/2021/05/Punugulu-4.jpg" alt="Punugulu">
-        <h3>Punugulu</h3>
-        <p>Click to view Punugulu options</p>
-    </div>
-
-    <!-- Puri -->
-    <div class="menu-item" onclick="toggleMenu('puri')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Poori_Bhaji.jpg/800px-Poori_Bhaji.jpg" alt="Puri">
-        <h3>Puri</h3>
-        <p>Click to view Puri options</p>
-    </div>
-</div>
-
-<!-- Menu Lists -->
-<div id="idly" class="menu-list">
-    <h2>Idly Menu</h2>
-    <ul>
-        <li>2 Idly with Sambar & Chutney - ₹15</li>
-        <li>4 Idly Combo - ₹25</li>
-        <li>Mini Idly Sambar - ₹30</li>
-    </ul>
-</div>
-
-<div id="dosa" class="menu-list">
-    <h2>Dosa Menu</h2>
-    <ul>
-        <li>Plain Dosa - ₹25</li>
-        <li>Masala Dosa - ₹30</li>
-        <li>Onion Dosa - ₹35</li>
-    </ul>
-</div>
-
-<div id="punugulu" class="menu-list">
-    <h2>Punugulu Menu</h2>
-    <ul>
-        <li>Small Plate (6 pcs) - ₹10</li>
-        <li>Large Plate (12 pcs) - ₹20</li>
-    </ul>
-</div>
-
-<div id="puri" class="menu-list">
-    <h2>Puri Menu</h2>
-    <ul>
-        <li>2 Puris with Curry - ₹25</li>
-        <li>4 Puris Combo - ₹35</li>
-    </ul>
-</div>
-
-<!-- Location Section -->
-<div class="location">
-    <p><strong>Location:</strong> Etukuru Road, Opposite D.S. Nagar, Brindavan Apartments, Guntur</p>
-</div>
-
-<script>
-    // Toggle visibility of menu items
-    function toggleMenu(category) {
-        const menuLists = document.querySelectorAll('.menu-list');
-        menuLists.forEach(list => list.style.display = 'none');
-
-        const selectedMenu = document.getElementById(category);
-        if (selectedMenu) {
-            selectedMenu.style.display = 'block';
-        }
+  <style>
+    /* Custom small animations */
+    @keyframes floatSlow {
+      0% { transform: translateY(0px) }
+      50% { transform: translateY(-14px) }
+      100% { transform: translateY(0px) }
     }
-</script>
+    .float-slow { animation: floatSlow 6s ease-in-out infinite; }
 
+    /* soft blur & overlay for hero background */
+    .hero-bg {
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05);
+    }
+    /* subtle glass card */
+    .glass {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    /* glowing CTA */
+    .glow {
+      box-shadow: 0 10px 30px rgba(211,47,47,0.18), 0 0 18px rgba(211,47,47,0.08) inset;
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800">
+
+  <!-- HERO -->
+  <header class="relative">
+    <div
+      class="hero-bg min-h-[70vh] md:min-h-[80vh] flex items-center"
+      style="background-image: url('poster.jpg');"
+      aria-hidden="true"
+    >
+      <!-- overlay for readability -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-white/60"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-8 items-center">
+        <!-- left: message -->
+        <div class="text-white md:pr-6">
+          <div class="inline-block px-3 py-1 bg-yellow-400 text-black font-semibold rounded-full mb-4">Grand Opening • 11-10-25</div>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight drop-shadow-md">
+            Karthikeya Tiffins
+          </h1>
+
+          <p class="mt-3 text-xl sm:text-2xl font-bold text-white/95">
+            Unlimited Student Tiffins — <span class="text-blue-600">₹49 Only</span>
+          </p>
+
+          <p class="mt-4 max-w-xl text-white/90">
+            Freshly made Idly, Dosa, Punugulu & Puri. Clean kitchen • Home-style taste • Student-friendly prices.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              class="glow inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-3 rounded-lg transition"
+              href="https://wa.me/919160009242?text=Hello%20Karthikeya%20Tiffins%20-%20I%20want%20to%20order"
+              target="_blank" rel="noopener"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="-ml-1">
+                <path d="M21 11.5a8.5 8.5 0 1 0-3.1 6.47L21 21l-2.03-6.22A8.48 8.48 0 0 0 21 11.5z" fill="#fff"/>
+              </svg>
+              Order on WhatsApp
+            </a>
+
+            <a
+              class="inline-flex items-center gap-3 border border-white/70 text-white px-4 py-3 rounded-lg hover:bg-white/10 transition"
+              href="https://www.google.com/maps"
+              target="_blank" rel="noopener"
+            >
+              Get Directions
+            </a>
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-3 text-sm text-white/90">
+            <div class="bg-white/10 px-3 py-1 rounded-full">Clean & Hygienic Kitchen</div>
+            <div class="bg-white/10 px-3 py-1 rounded-full">Student Specials</div>
+            <div class="bg-white/10 px-3 py-1 rounded-full">Fast Service</div>
+          </div>
+        </div>
+
+        <!-- right: floating food thumbnails & mini card -->
+        <div class="flex justify-center md:justify-end">
+          <div class="w-[320px] glass rounded-2xl p-4 shadow-xl">
+            <div class="grid grid-cols-2 gap-3">
+              <img class="w-full rounded-lg float-slow" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Idli_Sambar_Chutney.jpg/800px-Idli_Sambar_Chutney.jpg" alt="Idly">
+              <img class="w-full rounded-lg float-slow" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Masala_Dosa_with_chutney_and_sambar.jpg" alt="Dosa">
+              <img class="w-full rounded-lg float-slow" src="https://www.cookingcarnival.com/wp-content/uploads/2021/05/Punugulu-4.jpg" alt="Punugulu">
+              <img class="w-full rounded-lg float-slow" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Poori_Bhaji.jpg/800px-Poori_Bhaji.jpg" alt="Puri">
+            </div>
+
+            <div class="mt-4 text-center">
+              <div class="text-sm font-semibold text-gray-700">Student Offer</div>
+              <div class="text-3xl font-extrabold text-blue-700">₹49</div>
+              <div class="text-xs text-gray-600 mt-1">Unlimited tiffins (terms apply)</div>
+              <a href="#menu" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm">View Menu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- subtle bottom wave -->
+      <div class="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-white"></div>
+    </div>
+
+    <!-- small floating WhatsApp quick button on header corner -->
+    <a class="fixed right-5 bottom-5 z-50 flex items-center gap-3 bg-green-500 text-white px-4 py-3 rounded-full shadow-2xl hover:scale-105 transition"
+       href="https://wa.me/919160009242?text=Hi%20I%20want%20the%20student%20tiffin" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.1-.47-.149-.669.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.15-.174.2-.298.3-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.793.372s-1.04 1.015-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487 0 0 .0 0 .0.0.  " fill="#fff"/>
+      </svg>
+      WhatsApp
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-6 -mt-10">
+
+    <!-- MENU -->
+    <section id="menu" class="mb-10">
+      <div class="bg-white rounded-2xl p-6 shadow -mt-8">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-2xl font-bold">Popular Menu</h2>
+            <p class="text-gray-600 mt-1">Fresh every morning — pocket-friendly prices</p>
+          </div>
+          <div class="text-right">
+            <div class="text-sm text-gray-500">Location</div>
+            <div class="text-sm font-semibold">Etukuru Road, Opp D.S. Nagar, Brindavan Apartments, Guntur</div>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+          <!-- Menu card -->
+          <article class="rounded-xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Idli_Sambar_Chutney.jpg/800px-Idli_Sambar_Chutney.jpg" alt="Idly" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold">Idly</h3>
+              <p class="text-sm text-gray-500 mt-1">Soft idlies served with sambar & chutney.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="text-lg font-bold text-red-600">₹15</div>
+                <a class="text-sm px-3 py-1 rounded-full border border-red-100 bg-red-50" href="https://wa.me/919160009242?text=Idly%20order">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Masala_Dosa_with_chutney_and_sambar.jpg" alt="Dosa" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold">Masala Dosa</h3>
+              <p class="text-sm text-gray-500 mt-1">Crispy dosa with spiced potato filling.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="text-lg font-bold text-red-600">₹30</div>
+                <a class="text-sm px-3 py-1 rounded-full border border-red-100 bg-red-50" href="https://wa.me/919160009242?text=Masala%20Dosa%20order">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1">
+            <img src="https://www.cookingcarnival.com/wp-content/uploads/2021/05/Punugulu-4.jpg" alt="Punugulu" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold">Punugulu</h3>
+              <p class="text-sm text-gray-500 mt-1">Crispy deep-fried batter bites.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="text-lg font-bold text-red-600">₹10</div>
+                <a class="text-sm px-3 py-1 rounded-full border border-red-100 bg-red-50" href="https://wa.me/919160009242?text=Punugulu%20order">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Poori_Bhaji.jpg/800px-Poori_Bhaji.jpg" alt="Puri" class="w-full h-44 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold">Puri</h3>
+              <p class="text-sm text-gray-500 mt-1">Light and fluffy puris with curry.</p>
+              <div class="mt-3 flex items-center justify-between">
+                <div class="text-lg font-bold text-red-600">₹25</div>
+                <a class="text-sm px-3 py-1 rounded-full border border-red-100 bg-red-50" href="https://wa.me/919160009242?text=Puri%20order">Order</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="mb-10">
+      <div class="bg-white rounded-2xl p-6 shadow">
+        <h3 class="text-2xl font-bold">Why People Visit Us</h3>
+        <div class="mt-4 grid sm:grid-cols-3 gap-4">
+          <div class="p-4 flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600 font-bold">🥣</div>
+            <div>
+              <div class="font-semibold">Fresh Every Morning</div>
+              <p class="text-sm text-gray-500">Prepared hot daily with quality ingredients.</p>
+            </div>
+          </div>
+
+          <div class="p-4 flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-600 font-bold">💸</div>
+            <div>
+              <div class="font-semibold">Student Special ₹49</div>
+              <p class="text-sm text-gray-500">Unlimited tiffins offer for students (conditions apply).</p>
+            </div>
+          </div>
+
+          <div class="p-4 flex gap-4 items-start">
+            <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 font-bold">🧼</div>
+            <div>
+              <div class="font-semibold">Hygienic & Trusted</div>
+              <p class="text-sm text-gray-500">Clean kitchen and friendly staff — visit with confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="mb-10">
+      <div class="bg-white rounded-2xl p-6 shadow">
+        <h3 class="text-2xl font-bold">What Customers Say</h3>
+
+        <div id="testimonials" class="mt-4 relative">
+          <div class="overflow-hidden">
+            <div class="testimonial-track grid grid-cols-1 gap-4">
+              <blockquote class="p-4 rounded-lg border-l-4 border-green-200 bg-green-50">"Very tasty and pocket-friendly! I come every morning." — <strong>Ramesh</strong></blockquote>
+              <blockquote class="p-4 rounded-lg border-l-4 border-green-200 bg-green-50">"Clean kitchen and fast service. Must try!" — <strong>Priya</strong></blockquote>
+              <blockquote class="p-4 rounded-lg border-l-4 border-green-200 bg-green-50">"₹49 unlimited was an amazing deal." — <strong>Sri</strong></blockquote>
+            </div>
+          </div>
+
+          <div class="mt-3 flex gap-3">
+            <button id="prev" class="px-3 py-1 rounded bg-gray-100">Prev</button>
+            <button id="next" class="px-3 py-1 rounded bg-gray-100">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION & CONTACT -->
+    <section class="mb-16">
+      <div class="bg-white rounded-2xl p-6 shadow">
+        <h3 class="text-2xl font-bold">Location & Contact</h3>
+        <div class="mt-4 grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-gray-700">Etukuru Road, Opp D.S. Nagar, Brindavan Apartments, Guntur</p>
+            <div class="mt-4 flex gap-3">
+              <a class="inline-flex items-center gap-2 px-4 py-2 rounded bg-red-600 text-white" href="tel:9160009242">📞 9160009242</a>
+              <a class="inline-flex items-center gap-2 px-4 py-2 rounded bg-green-600 text-white" href="https://wa.me/919160009242?text=Hi%20I%20want%20to%20order">💬 WhatsApp</a>
+              <a class="inline-flex items-center gap-2 px-4 py-2 rounded border border-gray-200" href="#" id="openGallery">📸 Instagram</a>
+            </div>
+
+            <div class="mt-6 text-sm text-gray-500">
+              <strong>Opening</strong>: 11-10-25 • <strong>Best for:</strong> Students, Office workers, Early morning breakfast
+            </div>
+          </div>
+
+          <div>
+            <!-- Replace src below with your Maps iframe or real coordinates -->
+            <div class="w-full h-64 bg-gray-100 rounded overflow-hidden shadow-inner">
+              <iframe
+                src="https://www.google.com/maps?q=Guntur&output=embed"
+                class="w-full h-full border-0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-6 bg-white border-t">
+    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500">
+      © 2025 Karthikeya Tiffins • Made with ❤️ • Etukuru Road, Guntur
+    </div>
+  </footer>
+
+  <!-- Small JS: testimonials slider and simple UX -->
+  <script>
+    // Simple testimonial slider (no libs)
+    (function() {
+      const track = document.querySelector('.testimonial-track');
+      const items = track.children;
+      let idx = 0;
+
+      function show(i) {
+        idx = (i + items.length) % items.length;
+        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+        track.style.transition = 'transform 400ms ease';
+        // ensure each child is full width
+        for (let c of items) c.style.minWidth = '100%';
+      }
+
+      document.getElementById('prev').addEventListener('click', () => show(idx - 1));
+      document.getElementById('next').addEventListener('click', () => show(idx + 1));
+
+      // initial layout: set track to flex row
+      track.style.display = 'flex';
+      track.style.width = (items.length * 100) + '%';
+      for (let c of items) c.style.flex = '0 0 100%';
+
+      // autoplay
+      setInterval(() => show(idx + 1), 5000);
+    })();
+
+    // quick improvement: open placeholder instagram (you can update)
+    document.getElementById('openGallery').addEventListener('click', function(e){
+      e.preventDefault();
+      window.open('https://www.instagram.com', '_blank');
+    })
+  </script>
 </body>
 </html>
