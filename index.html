@@ -1,285 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karthikeya Tiffins — Unlimited ₹49</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikeya Tiffins</title>
 
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    @keyframes floatSlow {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-14px); }
-      100% { transform: translateY(0px); }
-    }
-    .float-slow {
-      animation: floatSlow 6s ease-in-out infinite;
-    }
-    .hero-bg {
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.05);
-    }
-    .glass {
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-    .glow {
-      box-shadow: 0 10px 30px rgba(211,47,47,0.18), 0 0 18px rgba(211,47,47,0.08) inset;
-    }
-  </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff8f0;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://i.ibb.co/MhJ3cPQ/Karthikeya-Tiffins.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: #ffe0b2;
+        }
+
+        .menu-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .menu-section h2 {
+            font-size: 2rem;
+            color: #d32f2f;
+            margin-bottom: 30px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            justify-items: center;
+            padding: 0 20px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item h3 {
+            color: #2c3e50;
+            margin: 15px 0 5px;
+        }
+
+        .menu-item p {
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            background: #e53935;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .offer-section {
+            background: #ffe0b2;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .offer-section h2 {
+            color: #d84315;
+        }
+
+        .offer-section p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        .highlight {
+            color: #ffeb3b;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .menu-item img { height: 180px; }
+        }
+    </style>
 </head>
-<body class="antialiased text-gray-800">
+<body>
 
-  <!-- HERO SECTION -->
-  <header class="relative">
-    <div class="hero-bg min-h-[70vh] md:min-h-[80vh] flex items-center"
-         style="background-image: url('poster.jpg');">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-white/60"></div>
-      <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-8 items-center">
-        <div class="text-white md:pr-6">
-          <div class="inline-block px-3 py-1 bg-yellow-400 text-black font-semibold rounded-full mb-4">
-            Grand Opening • 11-10-25
-          </div>
-          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight drop-shadow-md">
-            Karthikeya Tiffins
-          </h1>
-          <p class="mt-3 text-xl sm:text-2xl font-bold text-white/95">
-            Unlimited Student Tiffins — <span class="text-blue-600">₹49 Only</span>
-          </p>
-          <p class="mt-4 max-w-xl text-white/90">
-            Freshly made Idly, Dosa, Punugulu & Puri. Clean kitchen • Home-style taste • Student-friendly prices.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a class="glow inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-3 rounded-lg transition"
-               href="https://wa.me/919160009242?text=Hello%20Karthikeya%20Tiffins%20-%20I%20want%20to%20order" target="_blank" rel="noopener">
-              Order on WhatsApp
-            </a>
-            <a class="inline-flex items-center gap-3 border border-white/70 text-white px-4 py-3 rounded-lg hover:bg-white/10 transition"
-               href="https://www.google.com/maps" target="_blank" rel="noopener">
-              Get Directions
-            </a>
-          </div>
-          <div class="mt-5 flex flex-wrap gap-3 text-sm text-white/90">
-            <div class="bg-white/10 px-3 py-1 rounded-full">Clean & Hygienic Kitchen</div>
-            <div class="bg-white/10 px-3 py-1 rounded-full">Student Specials</div>
-            <div class="bg-white/10 px-3 py-1 rounded-full">Fast Service</div>
-          </div>
+<header>
+    <h1>Welcome to Karthikeya Tiffins</h1>
+    <p>Unlimited Tiffins for Students – Just ₹49!</p>
+    <p>Starting from <span class="highlight">11-10-25</span></p>
+</header>
+
+<section class="menu-section">
+    <h2>Our Special Menu</h2>
+    <div class="menu-grid">
+
+        <div class="menu-item">
+            <img src="https://images.indianexpress.com/2020/02/idli_759.jpg?w=640" alt="Idly">
+            <h3>Soft Idly</h3>
+            <p>Served with hot sambar & coconut chutney</p>
+            <span class="price">₹15</span>
         </div>
-        <div class="flex justify-center md:justify-end">
-          <div class="w-[320px] glass rounded-2xl p-4 shadow-xl">
-            <div class="grid grid-cols-2 gap-3">
-              <img class="w-full rounded-lg float-slow" src="idly.jpg" alt="Idly">
-              <img class="w-full rounded-lg float-slow" src="dosa.jpg" alt="Dosa">
-              <img class="w-full rounded-lg float-slow" src="punugulu.jpg" alt="Punugulu">
-              <img class="w-full rounded-lg float-slow" src="puri.jpg" alt="Puri">
-            </div>
-            <div class="mt-4 text-center">
-              <div class="text-sm font-semibold text-gray-700">Student Offer</div>
-              <div class="text-3xl font-extrabold text-blue-700">₹49</div>
-              <div class="text-xs text-gray-600 mt-1">Unlimited tiffins (terms apply)</div>
-              <a href="#menu" class="mt-3 inline-block bg-green-600 text-white px-4 py-2 rounded-lg text-sm">View Menu</a>
-            </div>
-          </div>
+
+        <div class="menu-item">
+            <img src="https://wallpaperaccess.com/full/6340448.jpg" alt="Dosa">
+            <h3>Golden Dosa</h3>
+            <p>Crispy dosa with spicy chutney & sambar</p>
+            <span class="price">₹25</span>
         </div>
-      </div>
-      <div class="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-white"></div>
+
+        <div class="menu-item">
+            <img src="https://www.sandyathome.com/wp-content/uploads/2021/02/wheat-punugulu-recipe.jpeg" alt="Punugulu">
+            <h3>Punugulu</h3>
+            <p>Crispy fried bites served with chutney</p>
+            <span class="price">₹20</span>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://i.ytimg.com/vi/toUUS4VRTLQ/maxresdefault.jpg" alt="Puri">
+            <h3>Fluffy Puri</h3>
+            <p>Served with potato curry & chutney</p>
+            <span class="price">₹25</span>
+        </div>
+
     </div>
-  </header>
+</section>
 
-  <!-- MAIN CONTENT -->
-  <main class="max-w-6xl mx-auto px-6 -mt-10">
+<section class="offer-section">
+    <h2>🎉 Special Student Offer 🎉</h2>
+    <p>Enjoy unlimited tiffins just for ₹49 only!</p>
+    <p>Visit us on <b>Etukuru Road, Guntur</b> – Opposite D.S. Nagar, Brindavan Apartments.</p>
+</section>
 
-    <!-- MENU SECTION -->
-    <section id="menu" class="mb-10">
-      <div class="bg-white rounded-2xl p-6 shadow -mt-8">
-        <div class="flex items-center justify-between">
-          <div>
-            <h2 class="text-2xl font-bold">Popular Menu</h2>
-            <p class="text-gray-600 mt-1">Fresh every morning — pocket-friendly prices</p>
-          </div>
-          <div class="text-right">
-            <div class="text-sm text-gray-500">Location</div>
-            <div class="text-sm font-semibold">Etukuru Road, Opp D.S. Nagar, Brindavan Apartments, Guntur</div>
-          </div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6">
-          <article class="rounded-xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1">
-            <img src="idly.jpg" alt="Idly" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold">Idly</h3>
-              <p class="text-sm text-gray-500 mt-1">Soft idlies served with sambar & chutney.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="text-lg font-bold text-red-600">₹15</div>
-                <a class="text-sm px-3 py-1 rounded-full border border-red-100 bg-red-50" href="https://wa.me/919160009242?text=Idly%20order">Order</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="rounded-xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1">
-            <img src="dosa.jpg" alt="Dosa" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold">Masala Dosa</h3>
-              <p class="text-sm text-gray-500 mt-1">Crispy dosa with spiced potato filling.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="text-lg font-bold text-red-600">₹30</div>
-                <a class="text-sm px-3 py-1 rounded-full border border-red-100 bg-red-50" href="https://wa.me/919160009242?text=Masala%20Dosa%20order">Order</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="rounded-xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1">
-            <img src="punugulu.jpg" alt="Punugulu" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold">Punugulu</h3>
-              <p class="text-sm text-gray-500 mt-1">Crispy deep-fried batter bites.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="text-lg font-bold text-red-600">₹10</div>
-                <a class="text-sm px-3 py-1 rounded-full border border-red-100 bg-red-50" href="https://wa.me/919160009242?text=Punugulu%20order">Order</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="rounded-xl overflow-hidden shadow hover:shadow-xl transition transform hover:-translate-y-1">
-            <img src="puri.jpg" alt="Puri" class="w-full h-44 object-cover">
-            <div class="p-4">
-              <h3 class="font-semibold">Puri</h3>
-              <p class="text-sm text-gray-500 mt-1">Light and fluffy puris with curry.</p>
-              <div class="mt-3 flex items-center justify-between">
-                <div class="text-lg font-bold text-red-600">₹25</div>
-                <a class="text-sm px-3 py-1 rounded-full border border-red-100 bg-red-50" href="https://wa.me/919160009242?text=Puri%20order">Order</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section class="mb-10">
-      <div class="bg-white rounded-2xl p-6 shadow">
-        <h3 class="text-2xl font-bold">Why People Visit Us</h3>
-        <div class="mt-4 grid sm:grid-cols-3 gap-4">
-          <div class="p-4 flex gap-4 items-start">
-            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600 font-bold">🥣</div>
-            <div>
-              <div class="font-semibold">Fresh Every Morning</div>
-              <p class="text-sm text-gray-500">Prepared hot daily with quality ingredients.</p>
-            </div>
-          </div>
-          <div class="p-4 flex gap-4 items-start">
-            <div class="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-600 font-bold">💸</div>
-            <div>
-              <div class="font-semibold">Student Special ₹49</div>
-              <p class="text-sm text-gray-500">Unlimited tiffins offer for students (conditions apply).</p>
-            </div>
-          </div>
-          <div class="p-4 flex gap-4 items-start">
-            <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 font-bold">🧼</div>
-            <div>
-              <div class="font-semibold">Hygienic & Trusted</div>
-              <p class="text-sm text-gray-500">Clean kitchen and friendly staff — visit with confidence.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="mb-10">
-      <div class="bg-white rounded-2xl p-6 shadow">
-        <h3 class="text-2xl font-bold">What Customers Say</h3>
-        <div id="testimonials" class="mt-4 relative">
-          <div class="overflow-hidden">
-            <div class="testimonial-track grid grid-cols-1 gap-4">
-              <blockquote class="p-4 rounded-lg border-l-4 border-green-200 bg-green-50">"Very tasty and pocket-friendly! I come every morning." — <strong>Ramesh</strong></blockquote>
-              <blockquote class="p-4 rounded-lg border-l-4 border-green-200 bg-green-50">"Clean kitchen and fast service. Must try!" — <strong>Priya</strong></blockquote>
-              <blockquote class="p-4 rounded-lg border-l-4 border-green-200 bg-green-50">"₹49 unlimited was an amazing deal." — <strong>Sri</strong></blockquote>
-            </div>
-          </div>
-          <div class="mt-3 flex gap-3">
-            <button id="prev" class="px-3 py-1 rounded bg-gray-100">Prev</button>
-            <button id="next" class="px-3 py-1 rounded bg-gray-100">Next</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LOCATION & CONTACT -->
-    <section class="mb-16">
-      <div class="bg-white rounded-2xl p-6 shadow">
-        <h3 class="text-2xl font-bold">Location & Contact</h3>
-        <div class="mt-4 grid md:grid-cols-2 gap-6">
-          <div>
-            <p class="text-gray-700">Etukuru Road, Opp D.S. Nagar, Brindavan Apartments, Guntur</p>
-            <div class="mt-4 flex gap-3">
-              <a class="inline-flex items-center gap-2 px-4 py-2 rounded bg-red-600 text-white" href="tel:9160009242">📞 9160009242</a>
-              <a class="inline-flex items-center gap-2 px-4 py-2 rounded bg-green-600 text-white"
-                 href="https://wa.me/919160009242?text=Hi%20I%20want%20to%20order">💬 WhatsApp</a>
-              <a class="inline-flex items-center gap-2 px-4 py-2 rounded border border-gray-200"
-                 href="#" id="openGallery">📸 Instagram</a>
-            </div>
-            <div class="mt-6 text-sm text-gray-500">
-              <strong>Opening:</strong> 11-10-25 • <strong>Best for:</strong> Students, Office workers, Early morning breakfast
-            </div>
-          </div>
-          <div>
-            <div class="w-full h-64 bg-gray-100 rounded overflow-hidden shadow-inner">
-              <iframe
-                src="https://www.google.com/maps?q=Guntur&output=embed"
-                class="w-full h-full border-0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="py-6 bg-white border-t">
-    <div class="max-w-6xl mx-auto px-6 text-center text-sm text-gray-500">
-      © 2025 Karthikeya Tiffins • Made with ❤️ • Etukuru Road, Guntur
-    </div>
-  </footer>
-
-  <script>
-    (function() {
-      const track = document.querySelector('.testimonial-track');
-      const items = track.children;
-      let idx = 0;
-
-      function show(i) {
-        idx = (i + items.length) % items.length;
-        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
-        track.style.transition = 'transform 400ms ease';
-        for (let c of items) c.style.minWidth = '100%';
-      }
-
-      document.getElementById('prev').addEventListener('click', () => show(idx - 1));
-      document.getElementById('next').addEventListener('click', () => show(idx + 1));
-
-      track.style.display = 'flex';
-      track.style.width = (items.length * 100) + '%';
-      for (let c of items) c.style.flex = '0 0 100%';
-
-      setInterval(() => show(idx + 1), 5000);
-    })();
-
-    document.getElementById('openGallery').addEventListener('click', function(e){
-      e.preventDefault();
-      window.open('https://www.instagram.com', '_blank');
-    });
-  </script>
+<footer>
+    <p>© 2025 Karthikeya Tiffins | Designed with ❤️ in Guntur</p>
+</footer>
 
 </body>
 </html>
